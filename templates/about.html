@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">James Kang</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">Projects</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div><!--/.container-fluid -->
+</nav>
+{% endblock %}
+
+{% block container %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+		<h1 class="page-header" align="center">My Projects</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 bottom-border">
+			<div class="col-md-8">
+				<a href="http://www.parksandrecquiz.com" target="_blank">
+					<img src="/static/img/canieatthis_thumbnail.png" height="400" width="700">
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="http://www.canieatthis.me" target="_blank">
+					<h2>Can I Eat This?</h2>
+				</a>
+				<p>Helps pregnant women quickly figure out if something is safe to eat.</p>
+				<div class="tech-used-section">
+					<h4>Technology Used</h4>
+					<ul>
+						<li>Django</li>
+						<li>Elasticsearch as the primary data store</li>
+						<li>jQuery</li>
+						<li>Redis as a task queue (holds onto missed search terms) and to hold recent searches</li>
+						<li><a href="https://github.com/jameskang410/canieatthis/blob/prod/esearch.py" target="_blank">Scraped</a> information and indexed into Elasticsearch</li>
+						<li>Deployed using Gunicorn (monitored by Supervisor) and Nginx</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 bottom-border">
+			<div class="col-md-8">
+				<a href="http://www.parksandrecquiz.com" target="_blank">
+					<img src="/static/img/parksandrecquotes_thumbnail.png" height="400" width="700">
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="http://www.parksandrecquiz.com" target="_blank">
+					<h2>Parks and Rec Quiz</h2>
+				</a>
+				<p>A single page application (SPA) game that tests users' knowledge of the popular TV show, Parks and Recreation. Allows users to compare results via a leaderboard, share their scores on Facebook, and submit new questions.</p>
+				<div class="tech-used-section">
+					<h4>Technology Used</h4>
+					<ul>
+						<li>Django REST Framework</li>
+						<li>AngularJS and jQuery</li>
+						<li>PostgreSQL</li>
+						<li>Redis (as a task queue and to hold leaderboard information)</li>
+						<li>Deployed using Gunicorn (monitored by Supervisor) and Nginx</li>
+						<li>Implemented Facebook's API</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-12 bottom-border">
+			<div class="col-md-8">
+				<a href="http://www.tomatoflix.com" target="_blank">
+					<img src="/static/img/tomatoflix_thumbnail.png" height="400" width="700">
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="http://www.tomatoflix.com" target="_blank">
+					<h2>Tomatoflix</h2>
+				</a>
+				<p>An interactive website that allows users to select random movies that are available to stream from Netflix. Netflix movies are associated with Rotten Tomatoes' critic and audience ratings as well as Netflix's rating. Users are able to search for movies by Rotten Tomatoes' ratings, Netflix rating, by movie or TV show, or by genre.</p>
+				<div class="tech-used-section">
+					<h4>Technology Used</h4>
+					<ul>
+						<li>Django</li>
+						<li>JQuery</li>
+						<li>PostgreSQL</li>
+						<li>Deployed using Gunicorn (monitored by Supervisor) and Nginx</li>
+						<li>Scraped data from Netflix (private API) and Rotten Tomatoes (public API... just thought it'd be fun) via <a href="http://www.github.com/jameskang410/scraping-netflix" target="_blank">Python scripting</a>. Scraped detailed information for over 6,000 movie titles.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-12 bottom-border">
+			<div class="col-md-8">
+				<a href="/" target="_blank">
+					<img src="static/img/jameskangme_thumbnail.png" height="400" width="700">
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="/" target="_blank">
+					<h2>Home Page</h2>
+				</a>
+				<p>The site you're on right now.</p>
+				<div class="tech-used-section">
+					<h4>Technology Used</h4>
+					<ul>
+						<li>Flask (wanted to find a lightweight framework since my homepage is static)</li>
+						<li>Static content delivered via Nginx</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
